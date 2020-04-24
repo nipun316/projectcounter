@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+
+
+  function randomising()
+{
+    var array1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+     var array2=array1.sort(function(a,b){return 0.5-Math.random()});
+     let z=document.querySelectorAll(".button");
+
+     for(let i=0;i<25;i++)
+     {
+      z[i].innerHTML=array2[i];
+
+     }
+     startCount()
+
+  }
+
+
+   var currentnum=1;
+  function disappear(num)
+  {
+    let w=document.querySelectorAll(".button")
+    let d=w[num].innerHTML;
+   
+    if(d==currentnum)
+    {
+      currentnum+=1;
+      w[num].style.color="red";
+
+    }
+    var peaky=0;
+    for(var j=0;j<25;j++)
+    {
+
+      if(w[j].style.color=="red")
+      {
+        peaky=peaky+1;
+
+      }
+    }
+    if(peaky==25)
+    {
+      stopCount()
+    }
+   
+    
+   
+
+  }
+var c = 0;
+var t;
+var timer_is_on = 0;
+
+function timedCount() {
+  document.getElementById("txt").value = c;
+  c = c + 1;
+  t = setTimeout(timedCount, 1000);
+}
+
+function startCount() {
+  if (!timer_is_on) {
+    timer_is_on = 1;
+    timedCount();
+  }
+
+}
+function stopCount(){
+  clearTimeout(t);
+  timer_is_on=0;
+  alert("you have taken "+c+"seconds!!!")
+  var timetaken=c;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: #e3e3e3;
+  padding : 10px;
+}
+
+.grid-item {
+  background-color: black;
+  border: 15px solid black;
+  padding: 0px;
+  font-size: 10px;
+  text-align: center;
+  color:black; 
+  font-family: bold;
+}
+
+.button{
+  background-color: red;
+  border: none;
+  color:black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 15px 32px;
+}
+.wrapper{
+
+  width: 50px;
+  height: 50px;
+}
+#txt{
+  margin-top: 150px;
+  margin-right: 300px;
+  float: right;
+  width: 150px;
+  height:100px;
+  font-size: 100px;
+  border: 20px solid black;
+  color: red;
+
+}
+#starter{
+float: left;
+margin-left: 500px;
+border:10px solid black;
+font-size: 20px;
+text-align: center;
+
+}
+#blocks{
+  float: right;
+  margin-right: 500px;
+  margin-top: 200px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+  
+  
+  <h1><button id="starter" onclick="randomising()"><h1 >START</h1></button> </h1> <input type="text" id="txt">
+
+ 
+<div class="wrapper">
+
+<div class="grid-container">
+
+  <div class="grid-item"><button  onclick="disappear(0)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(1)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(2)" class="button"></button></div>  
+  <div class="grid-item"><button  onclick="disappear(3)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(4)" class="button"></button></div>  
+  <div class="grid-item"><button  onclick="disappear(5)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(6)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(7)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(8)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(9)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(10)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(11)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(12)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(13)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(14)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(15)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(16)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(17)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(18)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(19)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(20)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(21)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(22)" class="button"></button></div>
+  <div class="grid-item"><button  onclick="disappear(23)" class="button"></button></div> 
+  <div class="grid-item"><button  onclick="disappear(24)" class="button"></button></div>      
+</div>
+
+
+
+</body>
+
+</html>
